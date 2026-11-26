@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "neural-pitch-swipe"
+version = "0.1.0"
+description = "Monophonic pitch estimation with PESTO-SWIPE-Tiny"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["librosa>=0.11", "numpy>=1.26", "soundfile>=0.13", "torch>=2.6"]
+
+[project.scripts]
+neural-pitch-swipe = "neural_pitch_swipe.cli:main"
+
+[tool.setuptools]
+packages = ["neural_pitch_swipe"]
+
+[tool.setuptools.package-data]
+neural_pitch_swipe = ["pesto-swipe-tiny-mdb.pt"]
